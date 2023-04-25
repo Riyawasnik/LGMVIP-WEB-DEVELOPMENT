@@ -1,1 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: algerian;
+}
+body{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: green;
+}
+.container, .container2{
+	position: relative;
+	max-width: 900px;
+	width: 100%;
+	border-radius: 6px;
+	padding: 30px;
+	margin: 0 15px;
+	background-color: pink;
+	box-shadow: 0 5px 10px rgba(0,0,0,1);
+}
 
+.container header, .container2 header{
+	position: relative;
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+}
+.container form .form{
+	position: absolute;
+	background-color: #fff;
+	transition: 0.3s ease;
+}
+.container form .fields{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+form .fields .input-field{
+	display: flex;
+	width: calc(100% / 3 - 15px);
+	flex-direction: column;
+	margin: 4px 0;
+
+}
+.container form button, #done{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 45px;
+	max-width: 200px;
+	width: 100%;
+	border:  none;
+}
+#display_message4{
+	width : 400px;
+	height: 225px;
+	border: 1px solid black;
+	background-position: center;
+	background-size: cover;
+}

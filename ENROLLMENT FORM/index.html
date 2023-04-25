@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+	<title>Enrollment Form</title>
+<link rel="stylesheet" type="text/css" href="css.css"></head>
+<body>
+	<div class="container">
+		<header>Enrollment Form</header><br/>
+	<form action="#">
+
+		<label>Name : </label>
+		<input type="text" name="cname" id="d1"><br/><br/>
+		<div class="input-field">
+		<label>Email : </label>
+		<input type="Email" name="mailid" id="d2"><br/><br/>
+		<label>DOB : </label>
+		<input type="date" name="dob" id="d3"><br/><br/>
+		<label>Website : </label>
+		<input type="Website" name="web" id="d4"><br/><br/>
+		<label>Image : </label>
+		<input type="file" id="imgfile" accept="image/*" name="image" onchange="loadFile(event)">
+
+		<br/><br/>
+		<label>Gender : </label>
+		<input type="radio" name="gender" value="M" id="d6">Male&nbsp
+		<input type="radio" name="gender" value="F" id="d6">Female<br/><br/>
+		<label>Skills : </label>
+		<input type="checkbox" name="skill" id="d7" value="java">Java&nbsp&nbsp&nbsp&nbsp
+		<input type="checkbox" name="skill" id="d7" value="HTML">Html&nbsp&nbsp&nbsp&nbsp
+		<input type="checkbox" name="skill" id="d7" value="css">Css&nbsp&nbsp&nbsp&nbsp
+		<input type="checkbox" name="skill" id="d7" value="js">JS<br/><br/>
+		<label>Knowledge level :  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1</label>
+		<input type="range" max="10" min="1" name="range" id="d8">
+		<label>10</label><br/><br/><br/>
+	</div>
+		<input type="button" id="done" onclick="showDetails();" value="Enroll Student">&nbsp&nbsp
+		<button type="reset">Clear</button>
+	</form>
+</div>
+	<div class="container2">
+		<header>Filled details</header><br/>
+<p>Name : <span id="display_message"></span></p><br>
+<p>Email : <span id="display_message1"></span></p><br>
+<p>DOB : <span id="display_message2"></span></p><br>
+<p>Website : <span id="display_message3"></span></p><br>
+<p> Image : </p>
+<p><img id="output" width="200" /></p>
+<script>
+	var loadFile=function(event){
+		var image = document.getElementById('output');
+		image.src=URL.createObjectURL(event.target.files[0]);
+	};
+</script>
+<br>
+<p>Gender : <span id="display_message5"></span></p><br>
+<p>Skills : <span id="display_message6"></span></p><br>
+<p>Knowledge level : <span id="display_message7"></span></p>
+</div>
+</body>
+<script type="text/javascript" >
+	function showDetails(){
+		//document.getElementById("name1").innerHTML="name : ";
+	var name=document.getElementById("d1").value;
+	display_message.innerHTML=name;
+	var email=document.getElementById("d2").value;
+	display_message1.innerHTML=email;
+	var dob=document.getElementById("d3").value;
+	display_message2.innerHTML=dob;
+	var website=document.getElementById("d4").value;
+	display_message3.innerHTML=website;
+
+	var gender=document.getElementsByName("gender");
+	for(i=0;i<gender.length;i++){
+		if(gender[i].checked)
+			display_message5.innerHTML=gender[i].value;
+	}
+	//display_message5.innerHTML=gender;
+	var skills=document.getElementsByName("skill");
+	var result=" ";
+	for(var i=0;i<skills.length;i++){
+		if(skills[i].checked){
+			result+=skills[i].value+" ";
+		}
+		}
+	display_message6.innerHTML=result;
+	var knowledge=document.getElementById("d8").value;
+	display_message7.innerHTML=knowledge;
+
+}
+</script>
+</html>
